@@ -4,6 +4,12 @@
             <a href="{% url 'home page' %}">Home</a>
             <a href="{% url 'departments list' %}">Departments List</a>
             <a href="{% url 'employees list' %}">Employees List</a>
+            <form action="{% url 'logout' %}" method="post" style="display: inline">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
         </div>
     </nav>
 </header>
+
+{# TODO fix the nav bar, lake everything link or button #}
