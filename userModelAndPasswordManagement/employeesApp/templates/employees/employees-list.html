@@ -40,8 +40,10 @@
     <br>
     <br>
     <br>
-    
-    <a href="{% url 'create employee' %}">Add Employee</a>
+
+    {% if perms.employees.add_employee %}
+        <a href="{% url 'create employee' %}">Add Employee</a>
+    {% endif %}
 
     <br>
     <br>

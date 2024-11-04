@@ -20,9 +20,10 @@
             {{ feedback_form.as_p }}
             <button type="submit">Submit</button>
         </form>
-   
-        
-        <a href="{% url 'delete employee' employee.pk %}">Delete</a>
+
+        {% if perms.employees.delete_employee %}
+            <a href="{% url 'delete employee' employee.pk %}">Delete</a>
+        {% endif %}
 
     </div>
 

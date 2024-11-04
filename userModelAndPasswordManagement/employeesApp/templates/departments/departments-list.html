@@ -19,7 +19,12 @@
         {% endfor %}
     </ul>
 
+        {% if perms.departments.add_department%}
+
+            <a href="{% url 'create department' %}">Add Department</a>
+            
+        {% endif %}
 
 
-    <a href="{% url 'create department' %}">Add Department</a>
+
 {% endblock %}

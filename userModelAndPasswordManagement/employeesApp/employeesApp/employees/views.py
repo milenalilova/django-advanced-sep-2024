@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
@@ -55,14 +56,14 @@ class EmployeeDetails(DetailView):
             return self.render_to_response(context)
 
 
-class CreateEmployee(CreateView):
+class CreateEmployee(PermissionRequiredMixin, CreateView):
     fields = '__all__'
     model = Employee
     template_name = 'employees/create-employee.html'
     success_url = reverse_lazy('employees list')
 
 
-class DeleteEmployee(DeleteView):
+class DeleteEmployee(PermissionRequiredMixin,DeleteView):
     model = Employee
     form_class = EmployeeDeleteForm
     template_name = 'employees/delete-employee.html'
