@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Employee
+{% endblock %}
+
+{% block content %}
+    {% include 'common/../nav-bar.html' %}
+    <h1>This Is The Delete Employee Page</h1>
+
+    {#    <a href="{% url 'delete employee' employee.pk %}">Delete Employee</a>#}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Delete Employee</button>
+    </form>
+
+{% endblock %}

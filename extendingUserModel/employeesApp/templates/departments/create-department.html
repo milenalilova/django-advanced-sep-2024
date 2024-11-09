@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create Department
+{% endblock %}
+
+{% block content %}
+    {% include 'common/../nav-bar.html' %}
+    
+    <h1>This Is The Create Department Page</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Department</button>
+    </form>
+    
+    
+{% endblock %}
+

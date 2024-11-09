@@ -1,0 +1,127 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the body to ensure footer stays at the bottom */
+body {
+     /*Create a semi-transparent overlay */
+    background-color: rgba(255, 255, 255, 0.6); /* White with 60% opacity */
+    background-blend-mode: lighten;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, .footer {
+    flex-shrink: 0;
+}
+
+/* Style the header and navigation */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffdd57;
+}
+
+.navbar form {
+    display: inline;
+}
+
+.navbar button {
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.navbar button:hover {
+    background-color: #ffdd57;
+    color: #333;
+}
+
+/* Style links in main content */
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff5722;
+    text-decoration: underline;
+}
+
+/* Main content area */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #ffdd57;
+    color: #333;
+}
+
+/* Footer styling to keep it at the bottom */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+}

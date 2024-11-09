@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    {% include 'nav-bar.html' %}
+    <h1>This Is The Login Page</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Login</button>
+        <p>Create Account <a href="{% url 'register' %}">Register</a></p>
+    </form>
+
+{% endblock %}

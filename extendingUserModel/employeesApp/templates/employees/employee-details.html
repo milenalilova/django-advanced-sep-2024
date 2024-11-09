@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Employee Details
+{% endblock %}
+
+{% block content %}
+    {% include 'common/../nav-bar.html' %}
+
+    <h1>This Is The Employee Details Page</h1>
+
+    <div>
+        <p>{{ employee.first_name }} {{ employee.last_name }}</p>
+        <p>Works as {{ employee.position }}</p>
+        <p>In the {{ employee.department }} department </p>
+
+        <h2>Leave Your Feedback</h2>
+        <form method="post" action="{% url 'employee details' employee.pk %}">
+            {% csrf_token %}
+            {{ feedback_form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if perms.employees.delete_employee %}
+            <a href="{% url 'delete employee' employee.pk %}">Delete</a>
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}
